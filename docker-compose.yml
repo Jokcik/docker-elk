@@ -6,7 +6,7 @@ services:
     volumes:
       - type: bind
         source: ./elasticsearch/config/elasticsearch.yml
-        target: /usr/share/elasticsearch/config/elasticsearch.yml
+        target: /etc/elasticsearch/elasticsearch.yml
         read_only: true
       - type: volume
         source: elasticsearch
@@ -24,7 +24,7 @@ services:
       - elk
 
   logstash:
-    image: wep4you/logstash:7.9.2
+    image: jamesgarside/logstash:7.10.0
     volumes:
       - type: bind
         source: ./logstash/config/logstash.yml
