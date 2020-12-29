@@ -3,6 +3,7 @@ version: '3.2'
 services:
   elasticsearch:
     image: barasher/elasticsearch-arm:7.10.0
+    restart: always
     volumes:
       - type: bind
         source: ./elasticsearch/config/elasticsearch.yml
@@ -25,6 +26,7 @@ services:
 
   logstash:
     image: wep4you/logstash:7.9.2
+    restart: always
     volumes:
       - type: bind
         source: ./logstash/config/logstash.yml
@@ -50,6 +52,7 @@ services:
 
   kibana:
     image: barasher/kibana-arm:7.10.0
+    restart: always
     volumes:
       - type: bind
         source: ./kibana/config/kibana.yml
