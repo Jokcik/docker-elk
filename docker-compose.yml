@@ -24,7 +24,7 @@ services:
       - elk
 
   logstash:
-    image: jamesgarside/logstash:7.10.0
+    image: wep4you/logstash:7.9.2
     volumes:
       - type: bind
         source: ./logstash/config/logstash.yml
